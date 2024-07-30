@@ -28,9 +28,28 @@ func RegisterHandler(db *sql.DB) http.HandlerFunc {
 		fmt.Println("Proceed")
 
 		if err := models.CreateUser(db, input.Username, input.Email, input.Password); err != nil {
+			if err == models.ErrUserExists {
+				http.Error(w, "User already exists", http.StatusConflict)
+				return
+			}
 			http.Error(w, "Failed to register user", http.StatusInternalServerError)
 			return
 		}
+
+		user, err := models.GetUserByUsername(db, input.Username)
+		if err != nil || user == nil {
+			http.Error(w, "Invalid username", http.StatusUnauthorized)
+			return
+		}
+
+		response := map[string]interface{}{
+			"id":       user.ID,
+			"username": user.Username,
+			"email":    user.Email,
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(response)
 
 		w.WriteHeader(http.StatusCreated)
 	}

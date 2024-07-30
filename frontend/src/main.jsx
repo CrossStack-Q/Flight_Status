@@ -6,12 +6,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { AuthProvider } from './components/Auth/AuthContext';
 
-import About from './components/About/About';
-import Home from './components/Main/Home';
+
 import Flight from './components/Flight/Flight';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import User from './components/Auth/User';
 
 const router = createBrowserRouter([
   {
@@ -19,28 +20,24 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "home",
-        element: <Home />,
+        path: "/",
+        element: <Flight />
       },
       {
-        path: "about",
-        element: <About />
+        path: "/flight",
+        element: <Flight />
       },
       {
-        path : "/",
-        element : <Flight/>
+        path: "/login",
+        element: <Login />
       },
       {
-        path : "/flight",
-        element : <Flight/>
+        path: "/signup",
+        element: <Register />
       },
       {
-        path : "/login",
-        element : <Login/>
-      },
-      {
-        path : "/signup",
-        element : <Register/>
+        path: "/me",
+        element: <User />
       }
     ]
   }]);
@@ -49,7 +46,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
 

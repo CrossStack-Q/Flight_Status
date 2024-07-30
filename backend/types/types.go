@@ -30,3 +30,21 @@ type User struct {
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
+
+type UserFlight struct {
+	ID           uint   `json:"id"`
+	FlightNumber string `json:"flightnumber"`
+	Username     string `json:"username"`
+	Email        string `json:"email"`
+	Phone        string `json:"phone"`
+}
+
+type UserInfo struct {
+	ID           uint      `json:"id"`
+	Username     string    `json:"username"`
+	Email        string    `json:"email"`
+	Password     string    `json:"password"`
+	FlightNumber string    `json:"flight_number"` // Add flight_number
+	CreatedAt    time.Time `json:"createdAt"`
+	UpdatedAt    time.Time `json:"updatedAt"`
+}

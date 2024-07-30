@@ -7,7 +7,7 @@ function Flight() {
 
     const [flights, setFlights] = useState([]);
 
-  
+
 
 
 
@@ -29,31 +29,34 @@ function Flight() {
 
     return (
         <div>
-            
+
             <FlightStatusForm />
 
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Departure</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arrival</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider wide-column">Origin</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider wide-column">Destination</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ">Status</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Departure</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arrival</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider wide-column">Origin</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider wide-column">Destination</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider wide-column">Gate Change</th>
+
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ">Status</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody className="bg-white divide-y divide-gray-200">
                     {
                         flights.map((flight) => (
                             <tr key={flight.flight_number}>
-                                <td class="px-6 py-4 whitespace-nowrap">{flight.flight_number}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{flight.deport_time}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{flight.destination_time}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{flight.deport_location}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{flight.destination_location}</td>
-                                
-                                <td class={`px-6 py-4 whitespace-nowrap ${flight.status === "Delayed" ? "bg-red-500" : (flight.gate_change ? "bg-yellow-400" : "bg-green-600")}`}>
+                                <td className="px-6 py-4 whitespace-nowrap">{flight.flight_number}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{flight.deport_time}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{flight.destination_time}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{flight.deport_location}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{flight.destination_location}</td>
+                                <td className={`px-6 py-4 whitespace-nowrap bg-blue-50 ${flight.gate_change ? "bg-yellow-400" : ""} `}>{flight.gate_change ? "True" : "False"}</td>
+
+                                <td className={`px-6 py-4 whitespace-nowrap ${flight.status === "Delayed" ? "bg-red-500" : "bg-green-600"}`}>
                                     {flight.status}
                                 </td>
                             </tr>

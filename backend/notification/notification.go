@@ -19,7 +19,7 @@ func WhatsappNotify(to string) {
 	params := &twilioApi.CreateMessageParams{}
 	params.SetTo(to)
 	params.SetFrom("whatsapp:+14155238886")
-	params.SetBody("FLight Status System")
+	params.SetBody("your Flight is updated")
 
 	_, err := client.Api.CreateMessage(params)
 	if err != nil {

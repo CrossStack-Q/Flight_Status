@@ -36,6 +36,15 @@ func LoginHandler(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
+		// Create response structure
+		response := map[string]interface{}{
+			"id":       user.ID,
+			"username": user.Username,
+			"email":    user.Email,
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(response)
 		w.WriteHeader(http.StatusOK)
 	}
 }
