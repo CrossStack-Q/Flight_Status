@@ -9,8 +9,9 @@ import {
 
 import About from './components/About/About';
 import Home from './components/Main/Home';
-import Schedule from './components/Schedule/Schedule';
 import Flight from './components/Flight/Flight';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
       {
         path : "/flight",
         element : <Flight/>
+      },
+      {
+        path : "/login",
+        element : <Login/>
+      },
+      {
+        path : "/signup",
+        element : <Register/>
       }
     ]
   }]);

@@ -51,6 +51,9 @@ func main() {
 	http.HandleFunc("/ws", routes.WsHandler(db))
 	http.HandleFunc("/flight-status", routes.FlightStatusHandler(db))
 
+	http.HandleFunc("/auth/signup", routes.RegisterHandler(db))
+	http.HandleFunc("/auth/login", routes.LoginHandler(db))
+
 	// notification.WhatsappNotify("whatsapp:+919718043803")
 
 	fmt.Println("Backend is running on port 8080")

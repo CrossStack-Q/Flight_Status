@@ -15,7 +15,7 @@ import (
 
 func FlightStatusHandler(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		utils.EnableCors(&w)
+		utils.EnableCors(w, r)
 		if r.Method == http.MethodOptions {
 			return
 		}

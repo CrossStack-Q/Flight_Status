@@ -18,7 +18,7 @@ var upgrader = websocket.Upgrader{
 
 func WsHandler(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		utils.EnableCors(&w)
+		utils.EnableCors(w, r)
 		conn, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
 			log.Println(err)

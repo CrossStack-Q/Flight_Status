@@ -28,7 +28,7 @@ function Navbar() {
                             Login
                         </li>
                     </Link>
-                    <Link to="/register">
+                    <Link to="/signup">
                         <li>
                             SignUp
                         </li>
