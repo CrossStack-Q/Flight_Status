@@ -7,6 +7,12 @@ A flight status app using Go for backend, React for frontend, and PostgreSQL for
 
 Live Link : [http://13.49.84.114:5173/](http://13.49.84.114:5173/)
 
+## Tech Stack
+
+**Client:** React, TailwindCSS
+
+**Server:** Go , PostgreSQL , Twilio
+
 
 ## Features
 
@@ -14,6 +20,14 @@ Live Link : [http://13.49.84.114:5173/](http://13.49.84.114:5173/)
 - Whatsapp Notification
 - Flight Filter
 - Realtime Data Update
+
+## Screenshots
+
+![P1](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P1.png)
+
+![P2](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P2.png)
+
+![P3](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P3.png)
 
 
 ## Run Locally
@@ -50,20 +64,7 @@ Start the server
 ```
 
 
-## Tech Stack
 
-**Client:** React, TailwindCSS
-
-**Server:** Go , PostgreSQL
-
-
-## Screenshots
-
-![P1](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P1.png)
-
-![P2](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P2.png)
-
-![P3](https://raw.githubusercontent.com/parasharanurag234/tempo/main/P3.png)
 
 
 ## Authors
