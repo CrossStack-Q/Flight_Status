@@ -1,0 +1,7 @@
+.wide-column {
+    @apply w-1/6; /* Adjust this value as needed */
+}
+
+.wider-column {
+    @apply w-1/3; /* Adjust this value as needed */
+}

@@ -1,0 +1,17 @@
+Auth using twillo -->
+Serverless function call when table change
+Code Below I made a psql function 
+"CREATE OR REPLACE FUNCTION notify_flight_change() RETURNS trigger AS $$
+BEGIN
+    PERFORM pg_notify('flight_changes', 'Flight table changed');
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+"
+
+"
+
+zz01 -- 29 july -- passengers list Array Return 
+gate change , delayed - zz01  ...
+
+Admin Panel -- Table update 
